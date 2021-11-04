@@ -50,18 +50,17 @@ func (db *ImageDB) UpdateByID(ctx context.Context, image *model.Image) error {
 	return nil
 }
 
-
 func (db *ImageDB) GetByID(ctx context.Context, id string) (*model.Image, error) {
 	var i model.Image
 
-	err := db.db.DB.QueryRowContext(ctx,`
+	err := db.db.DB.QueryRowContext(ctx, `
 		SELECT
-			id, image
+			id, image, width, height
 		FROM 
 		    images
 		WHERE
 			id = ?
-	`, id).Scan(&i.ID, &i.Image)
+	`, id).Scan(&i.ID, &i.Image, &i.Width, &i.Height)
 
 	if err != nil {
 		return nil, err
