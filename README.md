@@ -16,5 +16,5 @@ You need to insert ```migrations/000001_initial.up.sql```
 
 Also, you can run tests:
 ```bash
-bash test.bash
+go run cmd/test/main.go -addr=http://host:port (optional)
 ```

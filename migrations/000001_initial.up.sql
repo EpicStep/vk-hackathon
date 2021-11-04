@@ -8,4 +8,4 @@ CREATE TABLE images (
     Width INT UNSIGNED
 );
 
-END;
+COMMIT;
