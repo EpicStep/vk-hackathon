@@ -13,6 +13,7 @@ services:
       - mysql
     env_file:
       - .env
+    restart: always
 
   mysql:
     image: mysql:latest
