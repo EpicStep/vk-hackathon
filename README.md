@@ -10,6 +10,8 @@ After you can run app in docker:
 ```bash
 docker compose up -d
 ```
+Note that the container may restart several times, as it is waiting for MySQL
+
 You need to insert ```migrations/000001_initial.up.sql```
 
 Also, you can run tests:
